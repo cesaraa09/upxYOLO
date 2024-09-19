@@ -11,7 +11,7 @@ void setup() {
   digitalWrite(33, LOW);
   Serial.begin(115200);
 
-  WiFi.begin("VIVOFIBRA-35E2", "33d71f35e2");
+  WiFi.begin("NOME_DA_REDE", "SENHA");
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
     Serial.println("Conectando ao Wi-Fi...");
@@ -47,13 +47,10 @@ void loop() {
         if (listaFinal.containsKey("rlista")) {
         JsonObject rlista = listaFinal["rlista"].as<JsonObject>();
         
-        // Acesse as listas diretamente
         JsonArray lista1 = rlista["lista1"].as<JsonArray>();
         JsonArray lista2 = rlista["lista2"].as<JsonArray>();
 
-        // Verifique se há pelo menos um elemento em cada lista
         if (lista1.size() > 0 && lista2.size() > 0) {
-          // Obtenha o primeiro valor de cada lista (assumindo que você está interessado apenas no primeiro valor)
           int numElementosLista1 = lista1[0].as<int>();
           int numElementosLista2 = lista2[0].as<int>();
           
