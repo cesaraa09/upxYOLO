@@ -11,7 +11,7 @@ void setup() {
   digitalWrite(33, LOW);
   Serial.begin(115200);
 
-  WiFi.begin("NOME_DA_REDE", "SENHA");
+  WiFi.begin("NOME_DA_REDE", "_SENHA_");
   while (WiFi.status() != WL_CONNECTED) {
     delay(1000);
     Serial.println("Conectando ao Wi-Fi...");
